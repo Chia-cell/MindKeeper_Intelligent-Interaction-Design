@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "antd": "^6.4.3",
+    "axios": "^1.17.0",
+    "echarts": "^6.1.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0"
+  }
+}
