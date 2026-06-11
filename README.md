@@ -45,6 +45,7 @@
 
 ## 📁 项目结构
 
+```text
 MindKeeper/
 ├── frontend/                 # React 前端项目
 │   ├── src/
@@ -59,6 +60,7 @@ MindKeeper/
 ├── backend/                  # FastAPI 后端服务
 │   └── main.py              # API服务主文件
 └── README.md
+```
 
 ## 🛠️ 快速开始
 
@@ -69,36 +71,42 @@ MindKeeper/
 - **Git**（用于克隆仓库）
 
 ### 安装与运行
-
 #### 1. 克隆项目
+```bash
 git clone https://github.com/Chia-cell/MindKeeper_Intelligent-Interaction-Design.git
 cd MindKeeper_Intelligent-Interaction-Design
+```
 
 #### 2. 启动前端
+```bash
 cd frontend
 npm install
 npm run dev
-前端服务将运行在 `http://localhost:5173`
+```
+前端服务将运行在 http://localhost:5173
+
 
 #### 3. 启动后端
+```bash
 cd ../backend
 pip install fastapi uvicorn
 python main.py
-后端API服务将运行在 `http://localhost:8000`
+```
+后端API服务将运行在 http://localhost:8000
 
 ## 🔌 API 接口文档
-
-### 搜索接口 `POST /api/search`
-
+### 搜索接口 POST /api/search
 #### 请求示例
+```json
 {
   "keyword": "人工智能",
   "content_type": "all",
   "mode": true,
   "user_id": "user_123456"
 }
-
+```
 #### 响应示例
+```json
 {
   "results": [
     {
@@ -114,32 +122,31 @@ python main.py
   ],
   "updated_profile": null
 }
-
-### 偏好设置接口 `POST /api/preference`
-
+```
+### 偏好设置接口 POST /api/preference
 #### 请求示例
+```json
 {
   "content_id": "uuid-xxx",
   "action": "like",
   "mode": true,
   "user_id": "user_123456"
 }
-
-### 获取用户画像 `GET /api/user_profile?user_id={userId}`
-
+```
+### 获取用户画像 GET /api/user_profile?user_id={userId}
 ## 🤖 模型对接说明
+本项目的 AI 筛选功能通过 backend/main.py 中的 /api/search 接口实现。当模型同学准备好后，只需替换模拟数据部分为真实模型调用：
 
-本项目的 AI 筛选功能通过 `backend/main.py` 中的 `/api/search` 接口实现。当模型同学准备好后，只需替换模拟数据部分为真实模型调用：
-
-### ！！！当前是模拟数据
+```python
+# 当前是模拟数据
 MOCK_CONTENTS = [...]
 
-### 替换为真实模型调用
-### from ai_model import search_content
-### results = search_content(keyword=req.keyword, ...)
-
+# 替换为真实模型调用
+# from ai_model import search_content
+# results = search_content(keyword=req.keyword, ...)
+```
 ### 模型输出格式要求
-
+```json
 {
   "results": [
     {
@@ -154,27 +161,24 @@ MOCK_CONTENTS = [...]
     }
   ]
 }
-
+```
 ## 🏗️ 技术栈
-
 ### 前端
-- [React 18](https://react.dev/) - UI框架
-- [Vite](https://vitejs.dev/) - 构建工具
-- [Ant Design](https://ant.design/) - UI组件库
-- [ECharts](https://echarts.apache.org/) - 数据可视化
-- [Tailwind CSS](https://tailwindcss.com/) - 样式框架
-- [Axios](https://axios-http.com/) - HTTP客户端
-
+```text
+React 18 - UI框架
+Vite - 构建工具
+Ant Design - UI组件库
+ECharts - 数据可视化
+Tailwind CSS - 样式框架
+Axios - HTTP客户端
+```
 ### 后端
-- [FastAPI](https://fastapi.tiangolo.com/) - Web框架
-- [Uvicorn](https://www.uvicorn.org/) - ASGI服务器
-- [Python 3.10](https://www.python.org/) - 主要编程语言
-
+```text
+FastAPI - Web框架
+Uvicorn - ASGI服务器
+Python 3.10 - 主要编程语言
+```
 ## 📄 License
-
 本项目采用 MIT 许可证。
 
-<div align="center">
-  <sub>Built with  by MindKeeper Team</sub>
-</div>
-```
+<div align="center"> <sub>Built with  by MindKeeper Team</sub> </div>
